@@ -1,7 +1,7 @@
 # nre-dtd
 A tool for downloading data from the National Rail Enquiries' data feed.
 
-This code is licensed under the WTFPL, but its output is not. Any NRE data included in the output of this program is subject to these [terms and conditions](https://opendata.nationalrail.co.uk/terms).
+This code is licensed under the WTFPL or the CC0 (at your discretion), but its output is not. Any NRE data included in the output of this program is subject to these [terms and conditions](https://opendata.nationalrail.co.uk/terms).
 
 ## Useful links
 - [DTD](https://wiki.openraildata.com/index.php?title=DTD) on the Open Rail Data Wiki
@@ -17,6 +17,9 @@ This code is licensed under the WTFPL, but its output is not. Any NRE data inclu
 - Subscribe to the Fares, Routeing and Timetable feed.
 
 ### Use the tool
+#### From PyPI
+- Run `python3 -m pip install nre-dtd`.
+#### From source
 - Run `python3 -m pip install poetry` if you have not got Poetry.
 - Run `poetry init` to set up the environment.
 - Run `poetry shell` to enter the environment.

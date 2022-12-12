@@ -52,19 +52,19 @@ def download_thread(name, file, token, tid, progress: rich.progress.Progress):
 @app.command()
 def command(
         fares: pathlib.Path | None = typer.Option(
-            "",
+            None,
             dir_okay=False,
             writable=True,
             resolve_path=True
         ),
         routeing: pathlib.Path | None = typer.Option(
-            "",
+            None,
             dir_okay=False,
             writable=True,
             resolve_path=True
         ),
         timetable: pathlib.Path | None = typer.Option(
-            "",
+            None,
             dir_okay=False,
             writable=True,
             resolve_path=True
@@ -73,8 +73,7 @@ def command(
         password: str = None
 ):
     if not (fares or routeing or timetable):
-        console.log("Nothing to do. Exiting.")
-        raise typer.Abort()
+        raise typer.BadParameter("Nothing to do. Please specify at least one of --fares, --routeing or --timetable.")
 
     if not username:
         username = rich.prompt.Prompt.ask("Username")
@@ -130,7 +129,7 @@ def command(
             tasks[name] = progress.add_task(name, total=None)
 
         for name, file in files.items():
-            thread = threading.Thread(target=download_thread, args=(name, file, json.get('token'), tasks[name], progress))
+            thread = threading.Thread(target=download_thread, args=(name, file, json.get('token'), tasks[name], progress), daemon=True)
             thread.start()
 
             threads.append(thread)

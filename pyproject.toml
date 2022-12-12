@@ -1,10 +1,19 @@
 [tool.poetry]
 name = "nre-dtd"
-version = "0.1.0"
+version = "1.0.1"
 description = "Download data from the NRE DTD"
-authors = ["gltile"]
+authors = [
+    "Sarah C <80788438+gltile-two-electric-boogaloo@users.noreply.github.com>"
+]
 license = "WTFPL"
 readme = "README.md"
+repository = "https://github.com/gltrains/nre-dtd"
+classifiers = [
+    "License :: CC0 1.0 Universal (CC0 1.0) Public Domain Dedication",
+    "Development Status :: 5 - Production/Stable",
+    "Environment :: Console",
+    "Topic :: Utilities"
+]
 packages = [{include = "nre_dtd"}]
 
 [tool.poetry.dependencies]
