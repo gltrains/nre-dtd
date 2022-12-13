@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "nre-dtd"
-version = "1.0.1"
+version = "1.1.0"
 description = "Download data from the NRE DTD"
 authors = [
     "Sarah C <80788438+gltile-two-electric-boogaloo@users.noreply.github.com>"
