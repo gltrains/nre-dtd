@@ -51,23 +51,20 @@ def download_thread(name, file, token, tid, progress: rich.progress.Progress):
 
 @app.command()
 def command(
-        fares: pathlib.Path | None = typer.Option(
+        fares: pathlib.Path = typer.Option(
             None,
             dir_okay=False,
-            writable=True,
-            resolve_path=True
+            writable=True
         ),
-        routeing: pathlib.Path | None = typer.Option(
+        routeing: pathlib.Path = typer.Option(
             None,
             dir_okay=False,
-            writable=True,
-            resolve_path=True
+            writable=True
         ),
-        timetable: pathlib.Path | None = typer.Option(
+        timetable: pathlib.Path = typer.Option(
             None,
             dir_okay=False,
-            writable=True,
-            resolve_path=True
+            writable=True
         ),
         username: str = None,
         password: str = None
@@ -104,13 +101,13 @@ def command(
 
     files = dict()
 
-    if fares != "":
+    if fares:
         files[fares] = "/api/staticfeeds/2.0/fares"
 
-    if routeing != "":
+    if routeing:
         files[routeing] = "/api/staticfeeds/2.0/routeing"
 
-    if timetable != "":
+    if timetable:
         files[timetable] = "/api/staticfeeds/3.0/timetable"
 
     with rich.progress.Progress(
