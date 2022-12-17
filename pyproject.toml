@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "nre-dtd"
-version = "1.1.0"
+version = "1.1.1"
 description = "Download data from the NRE DTD"
 authors = [
     "Sarah C <80788438+gltile-two-electric-boogaloo@users.noreply.github.com>"
@@ -17,7 +17,7 @@ classifiers = [
 packages = [{include = "nre_dtd"}]
 
 [tool.poetry.dependencies]
-python = "^3.10"
+python = "^3.6"
 requests = "^2.28.1"
 typer = "^0.7.0"
 rich = "^12.6.0"
